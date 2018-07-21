@@ -73,7 +73,6 @@
 			@endforeach
 			<br>
 		</div>
-		{{ $products->render() }}
 	</div>
 @endsection
 

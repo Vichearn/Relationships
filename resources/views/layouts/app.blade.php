@@ -62,7 +62,7 @@
         </ul>
 
         <form action="{{ action('ProductsController@search') }}" method="GET">
-            <input type="text" name="searchl" 
+            <input type="text" name="search" 
                     placeholder=" {{ trans('layouts.SearchPdName') }}" 
                     style="border-radius: 50px;" required/>
             <button class="btn btn-sm btn-primary" type="submit" 

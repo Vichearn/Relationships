@@ -134,6 +134,14 @@ class ProductsController extends Controller
         return redirect()->back();
     }
 
+    public function findCate(Request $request)
+    {
+        $pdCate = $request->categorySelected;
+
+        $products = DB::table('products')->where('category_id', $pdCate)->get();
+        return view('products.findCate', compact('products'));
+    }
+
     public function findPc()
     {
         $productsCate = Product::where('category_id', 1)->paginate(4);
@@ -159,7 +167,8 @@ class ProductsController extends Controller
     }
 
     public function search(Request $request){
-      $searchData = Input::get('searchl');
+      //$searchData = Input::get('searchl');
+      $searchData = $request->search;
 
       //start query for search
       $products = DB::table('products')

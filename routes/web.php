@@ -35,6 +35,9 @@ Route::get('products/searchProduct', 'ProductsController@search')->name('searchP
 //Product Show Routes
 Route::get('products/productShow/{id}', 'ProductsController@productShow')->name('productShow');
 
+//Product Search Routes
+Route::get('products/findCate', 'ProductsController@findCate')->name('findCate');
+
 //Product Category Routes
 Route::get('products/findPc', 'ProductsController@findPc')->name('findPc');
 Route::get('products/findNotebook', 'ProductsController@findNotebook')->name('findNotebook');
