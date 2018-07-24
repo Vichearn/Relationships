@@ -39,6 +39,10 @@
 						          {{ Form::label('pd_price', 'Product Price: ', array('class' => 'h4')) }}
 						          {{ Form::text('pd_price', Input::old('pd_price'), array('class' => 'form-control', 'placeholder' => 'ราคาสินค้า')) }}
 						        </div>
+						        <div class="form-group col-md-8">
+						          {{ Form::label('pd_quantity', 'Product Quantity: ', array('class' => 'h4')) }}
+						          {{ Form::text('pd_quantity', Input::old('pd_quantity'), array('class' => 'form-control', 'placeholder' => 'จำนวนสินค้า')) }}
+						        </div>
 
 						        <div class="form-group col-md-8">
 						          {{ Form::label('pd_image', 'Product Image: ', array('class' => 'h4')) }}

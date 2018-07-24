@@ -34,6 +34,14 @@
 		</tr>
 		<tr>
 			<td>
+				<strong>Product Quantity:</strong>
+			</td>
+			<td>
+				{{ $show->pd_quantity }}
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<strong>Created Date:</strong>
 			</td>
 			<td>

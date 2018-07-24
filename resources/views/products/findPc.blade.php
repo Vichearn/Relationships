@@ -1,8 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
-		<br />
+		<br>
+		<div class="dropdown show">
+		  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    เลือกประเภทสินค้า
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		    <a class="dropdown-item" href="{{ URL::to('products/findPc') }}">PC</a>
+		    <a class="dropdown-item" href="{{ URL::to('products/findNotebook') }}">Notebook</a>
+		    <a class="dropdown-item" href="{{ URL::to('products/findPhone') }}">Phone</a>
+		    <a class="dropdown-item" href="{{ URL::to('products/findTablet') }}">Tablet</a>
+		  </div>
+		</div>
+		<hr>
 		<div class="row">
 			@foreach($productsCate as $show)
 			  <div class="col-sm-2">
@@ -33,9 +44,17 @@
 			        	{{ \Illuminate\Support\Str::words($show->pd_detail, 5,'...') }}
 			        </p>
 			        <button type="button" class="btn btn-sm" style="margin-bottom: 10px;">
-						สินค้าคงเหลือ <span class="badge badge-light">4</span>
+						สินค้าคงเหลือ <span class="badge badge-light">{{$show->pd_quantity}}
+						</span>
 					</button>
-			        <a href="#" class="btn btn-primary">Add to Cart</a>
+			        <form method="POST" action="{{url('add-to-cart/')}}">
+                        <input type="hidden" name="product_id" value="{{$show->id}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-primary add-to-cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            Add to cart
+                        </button>
+                    </form>
 			      </div>
 			    </div>
 			    	<br />
@@ -44,5 +63,4 @@
 			<br>
 		</div>
 		{{ $productsCate->render() }}
-	</div>
 @endsection

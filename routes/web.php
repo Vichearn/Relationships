@@ -43,3 +43,8 @@ Route::get('products/findPc', 'ProductsController@findPc')->name('findPc');
 Route::get('products/findNotebook', 'ProductsController@findNotebook')->name('findNotebook');
 Route::get('products/findPhone', 'ProductsController@findPhone')->name('findPhone');
 Route::get('products/findTablet', 'ProductsController@findTablet')->name('findTablet');
+
+//Cart
+Route::post('add-to-cart/', 'CartController@cart')->name('add-to-cart');
+Route::delete('cart/{id}', 'CartController@remove')->name('remove');
+Route::resource('cart', 'CartController');

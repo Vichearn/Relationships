@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>{{ $show->pd_name }}</h1>
-    <div class="jumbotron" style="border: 2px solid black; padding-top: 20px;">
+    <div class="jumbotron" style="border: 1px solid black; padding-top: 20px;">
     <br/>
     	<img src="{!! url('/images/'.$show->pd_image) !!}" class="img-fluid" alt="Responsive image">
     <hr/>
@@ -53,6 +53,15 @@
     <hr/>
     <br/>
     <a class="btn btn-small btn-success" href="{{ url()->previous() }}">Back</a>
+    <hr>
+    <form method="POST" action="{{url('c/')}}">
+        <input type="hidden" name="product_id" value="{{$show->id}}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-primary add-to-cart">
+            <i class="fa fa-shopping-cart"></i>
+            Add to cart
+        </button>
+    </form>
     </div>
 </div>
 @endsection

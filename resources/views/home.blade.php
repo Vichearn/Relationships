@@ -17,10 +17,82 @@
             </div>
         @endif
 
-        <div class="row justify-content-center" style="height: 400px;">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header"><h1>{{ trans('layouts.Welcome') }}</h1></div>
+        <div class="row justify-content-center">
+            <div class="setmain">
+                <div class="topsetmain">
+                    <form action="{{ action('ProductsController@findCate') }}" method="GET">
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="1" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                PC
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="2" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Notebook
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="3" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Phone
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="4" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Tablet
+                        </button>
+                    </form>   
+                </div>
+                <div class="leftsetmain">
+                    <div class="headerleftsetmain">
+                        
+                    </div>
+                    <div class="bodyleftsetmain">
+                        
+                    </div>
+                    <div class="footerleftsetmain">
+                        
+                    </div>
+                </div>
+                <div class="rightsetmain">
+                    <form action="{{ action('ProductsController@findCate') }}" method="GET">
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="1" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                PC
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="2" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Notebook
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="3" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Phone
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="submit" 
+                                value="4" 
+                                name="categorySelected" 
+                                href="{{ URL::to('products/findCate') }}" 
+                                style="border-radius: 50px;">
+                                Tablet
+                        </button>
+                    </form>  
                 </div>
             </div>
         </div>

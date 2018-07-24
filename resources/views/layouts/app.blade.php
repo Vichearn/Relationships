@@ -11,7 +11,7 @@
     <link href="{{ asset('css/open-iconic-bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
@@ -41,30 +41,21 @@
             <a class="nav-link" href="{{ URL::to('products') }}">
             {{ trans('layouts.Products') }}</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ trans('layouts.Categories') }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ URL::to('products/findPc') }}">
-              {{ trans('layouts.PC') }}</a>
-              <a class="dropdown-item" href="{{ URL::to('products/findNotebook') }}">
-              {{ trans('layouts.Notebook') }}</a>
-              <a class="dropdown-item" href="{{ URL::to('products/findPhone') }}">
-              {{ trans('layouts.Phone') }}</a>
-              <a class="dropdown-item" href="{{ URL::to('products/findTablet') }}">
-              {{ trans('layouts.Tablet') }}</a>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{{ trans('layouts.Contact') }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{URL::to('cart')}}">
+              Cart <span class="badge badge-light"> 2
+              </span>
+            </a>
           </li>
         </ul>
 
         <form action="{{ action('ProductsController@search') }}" method="GET">
             <input type="text" name="search" 
                     placeholder=" {{ trans('layouts.SearchPdName') }}" 
-                    style="border-radius: 50px;" required/>
+                    style="border-radius: 50px; text-align: left; padding-left: 10px;" required/>
             <button class="btn btn-sm btn-primary" type="submit" 
                     href="{{ URL::to('products/searchProduct') }}" 
                     style="border-radius: 50px;">
@@ -128,7 +119,7 @@
       </div>
     </nav>
 
-    <main class="py-4">
+    <main class="container">
       @yield('content')
     </main>
     <footer class="page-footer font-small unique-color-dark mt-4" 

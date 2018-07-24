@@ -61,6 +61,7 @@ class ProductsController extends Controller
             $product->pd_name     = Input::get('pd_name');
             $product->pd_detail   = Input::get('pd_detail');
             $product->pd_price    = Input::get('pd_price');
+            $product->pd_quantity    = Input::get('pd_quantity');
             $product->category_id = Input::get('category_id');
             $product->created_at  = Input::get('created_at');
             $product->updated_at  = Input::get('updated_at');
@@ -166,11 +167,9 @@ class ProductsController extends Controller
         return view('products.findTablet', compact('productsCate'));
     }
 
+    //Search Products Name
     public function search(Request $request){
-      //$searchData = Input::get('searchl');
       $searchData = $request->search;
-
-      //start query for search
       $products = DB::table('products')
       ->where('products.pd_name', 'like', '%' . $searchData . '%')
       ->get();
